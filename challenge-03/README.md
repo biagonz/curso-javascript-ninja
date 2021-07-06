@@ -178,10 +178,10 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 function plural (prop) {
-    if(prop > 1) return 's'
+    if(prop !== 1) return 's'
 }
 
-function apresentacao () {
+pessoa.apresentacao = function () {
     var genero = pessoa.sexo === 'feminino' ? 'a' : 'o'
 
     return 'Olá, eu sou '+ genero + ' ' + pessoa.nome + ' ' + pessoa.sobrenome
@@ -192,6 +192,6 @@ function apresentacao () {
 }
 
 // Agora, apresente-se ;)
-apresentacao()
+pessoa.apresentacao()
 //'Olá, eu sou a Pessoa Objeto, tenho 29 anos, 1.67, meu peso é 85 e, só hoje, eu já caminhei 50 metros!'
 ```
